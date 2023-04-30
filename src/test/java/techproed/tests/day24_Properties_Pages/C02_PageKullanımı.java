@@ -1,6 +1,8 @@
 package techproed.tests.day24_Properties_Pages;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import techproed.pages.OpenSourcePage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 
@@ -16,7 +18,15 @@ public class C02_PageKullanımı {
              */
 
         //kullaniciAdi, kullaniciSifre, submitButton elementlerini locate edelim
+        //Driver.getDriver().findElement(By.xpath("locate"));
+        OpenSourcePage openSourcePage = new OpenSourcePage();
+        openSourcePage.username.sendKeys(ConfigReader.getProperty("username"));
+        openSourcePage.password.sendKeys(ConfigReader.getProperty("password"));
+        openSourcePage.login.click();
+
+
         //Login Testinin basarili oldugunu test et
+        Assert.assertTrue(openSourcePage.dashboard.isDisplayed());
 
     }
 }
