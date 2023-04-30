@@ -10,9 +10,9 @@ import org.testng.annotations.Test;
 
 public class C03_Priority {
     /*
-    TestNG test methodlarını isim sırasına (alfabetik) göre çalıştırır. Eğer isim sıralamasının
-    dışında bir sıralama ile çalışmasını isterseniz o zaman test methodlarına öncelik yani (priority)
-    tanımlayabiliriz.
+    TestNG test methodlarını isim sırasına (alfabetik) göre ve rakamlara göre küçükten büyüğe çalıştırır.
+    Eğer isim sıralamasının dışında bir sıralama ile çalışmasını isterseniz o zaman test methodlarına öncelik
+    yani (priority) tanımlayabiliriz.
     Priority küçükten büyüğe göre çalışır. Eğer bir test methoduna priority atanmamışsa
     default olarak priority=0 kabul edilir.
 
