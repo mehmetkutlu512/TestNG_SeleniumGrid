@@ -13,7 +13,7 @@ public class ConfigReader {
     //ve atamasını yaparız. FileInputStream ile dosya yolunu akışa alırız.
 
     static {
-        String dosyaYolu = "cunfiguration.properties";
+        String dosyaYolu = "configuration.properties";
         try {
             FileInputStream fis = new FileInputStream(dosyaYolu);
             properties = new Properties(); //objeyi oluşturduk ve atamasını gerçekleştirdik

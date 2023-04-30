@@ -3,6 +3,7 @@ package techproed.utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 import java.time.Duration;
 
@@ -12,6 +13,15 @@ public class Driver {
     Driver class'ından static methodlar kullanarak driver oluştururuz. Static olduğu için class ismi ile
     her yerden methoda ulaşabileceğiz.
      */
+    /*
+    Singleton Pattern: Tekli kullanım kalıbı.
+        Bir class'tan obje oluşturulmasının önüne geçilmesi için kullanılan ifade
+        Bir class'tan obje oluşturulmasının önüne geçmek için defult constructor'ın kullanımını engellemek için
+    private access modifier kullanarak bir constructor oluştururuz.
+     */
+    private Driver(){
+
+    }
     static WebDriver driver;
 
     public static WebDriver getDriver (){
@@ -21,8 +31,21 @@ public class Driver {
         aynı sayfada RETURN et. Bunun için sadece yapmamız gereken if (driver==null) kullanmak
          */
         if (driver==null){
-            WebDriverManager.chromedriver().setup();
-            driver= new ChromeDriver();
+            switch (ConfigReader.getProperty("browser")){
+                case "chrome" :
+                    WebDriverManager.chromedriver().setup();
+                    driver= new ChromeDriver();
+                    break;
+                case "edge" :
+                    WebDriverManager.edgedriver().setup();
+                    driver= new EdgeDriver();
+                    break;
+                default:
+                    WebDriverManager.chromedriver().setup();
+                    driver= new ChromeDriver();
+
+            }
+
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         }
@@ -32,10 +55,20 @@ public class Driver {
     }
 
     public static void closeDriver (){
-        driver.close();
+       if (driver!=null){ //Driver'a değer atanmışsa
+            driver.close();
+           driver=null;
+        }
+
     }
 
+    public static void quitDriver (){
+        if (driver!=null){ //Driver'a değer atanmışsa
+            driver.quit();
+            driver=null;
+        }
 
+    }
 
 
 }

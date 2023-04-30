@@ -9,7 +9,7 @@ public class ConfigReaderPractice {
     public static Properties properties;
 
     static {
-        String dosyaYolu = "cunfiguration.properties";
+        String dosyaYolu = "configuration.properties";
 
         try {
             FileInputStream fis = new FileInputStream(dosyaYolu);
