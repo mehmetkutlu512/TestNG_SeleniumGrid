@@ -1,0 +1,15 @@
+package techproed.tests.day23_DependsOnMethods;
+
+import org.testng.annotations.Test;
+import techproed.utilities.Driver;
+
+public class C04_DriverTestPractice {
+
+    @Test
+    public void driverTest1() {
+
+        Driver.getDriver().get("https://techproeducation.com");
+        Driver.getDriver().get("https://amazon.com");
+        Driver.getDriver().get("https://facebook.com");
+    }
+}
