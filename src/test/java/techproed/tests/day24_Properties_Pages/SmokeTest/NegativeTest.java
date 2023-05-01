@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import techproed.pages.BlueRentalPage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
+import techproed.utilities.ReusableMethods;
 
 public class NegativeTest {
     @Test
@@ -24,7 +25,9 @@ public class NegativeTest {
         BlueRentalPage blueRentalPage=new BlueRentalPage();
         blueRentalPage.login.click();
         blueRentalPage.email.sendKeys(ConfigReader.getProperty("fakeEmail"), Keys.TAB, ConfigReader.getProperty("fakepass"), Keys.ENTER);
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
+        ReusableMethods.bekle(3);
+        ReusableMethods.tumSayfaResmi();
         Assert.assertTrue(blueRentalPage.hataMesaji.isDisplayed());
         Driver.closeDriver();
 
