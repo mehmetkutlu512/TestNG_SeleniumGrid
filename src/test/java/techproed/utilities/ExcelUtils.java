@@ -44,4 +44,17 @@ public class ExcelUtils {
         return sheet.getRow(0).getLastCellNum();
     }
 
+    //Exceldeki dataları alabilmek için 2 boyutlu bir Array method oluşturalım.
+    public  String[][] getDataAttay(){
+        String [][] data = new String[rowCount()][columnCount()];
+
+        for (int i = 1; i <= rowCount() ; i++) {
+            for (int j = 0; j < columnCount(); j++) {
+                String value = getCellData(i,j);
+                data [i-1][j] = value;
+            }
+        }
+        return data;
+    }
+
 }
