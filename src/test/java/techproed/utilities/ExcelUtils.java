@@ -45,7 +45,7 @@ public class ExcelUtils {
     }
 
     //Exceldeki dataları alabilmek için 2 boyutlu bir Array method oluşturalım.
-    public  String[][] getDataAttay(){
+    public  String[][] getDataArray(){
         String [][] data = new String[rowCount()][columnCount()];
 
         for (int i = 1; i <= rowCount() ; i++) {
