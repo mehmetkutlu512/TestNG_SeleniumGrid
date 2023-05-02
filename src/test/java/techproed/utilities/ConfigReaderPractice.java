@@ -1,30 +1,30 @@
 package techproed.utilities;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigReaderPractice {
+
     public static Properties properties;
 
     static {
-        String dosyaYolu = "configuration.properties";
 
         try {
-            FileInputStream fis = new FileInputStream(dosyaYolu);
+            FileInputStream fis = new FileInputStream("configuration.properties");
             properties = new Properties();
             properties.load(fis);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+
     }
+
 
     public static String getProperty (String key){
 
-        return properties.getProperty(key);
+        return  properties.getProperty(key);
     }
-
 }
