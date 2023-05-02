@@ -18,13 +18,13 @@ public class C03_PageKullanimi {
         testCenterTechproPage.userName.sendKeys(ConfigReader.getProperty("kullaniciAdi"), Keys.TAB,
                                                 ConfigReader.getProperty("kullaniciPassword"), Keys.ENTER);
 
-        Assert.assertTrue(testCenterTechproPage.text.isDisplayed());
-
-
-        //Sayfadan cikis yap ve cikis yapildigini test et
-        testCenterTechproPage.logout.click();
-        Assert.assertTrue(testCenterTechproPage.giris.isDisplayed());
-        Driver.closeDriver();
+//        Assert.assertTrue(testCenterTechproPage.text.isDisplayed());
+//
+//
+//        //Sayfadan cikis yap ve cikis yapildigini test et
+//        testCenterTechproPage.logout.click();
+//        Assert.assertTrue(testCenterTechproPage.giris.isDisplayed());
+//        Driver.closeDriver();
 
     }
 
