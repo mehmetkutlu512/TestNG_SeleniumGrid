@@ -11,7 +11,7 @@ public class BlueRentalPagePractice {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "(//a)[1]")
+    @FindBy(xpath = "(//*[@role='button'])[1]")
     public WebElement login1;
 
     @FindBy(xpath = "//*[@id='formBasicEmail']")

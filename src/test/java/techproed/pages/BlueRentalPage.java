@@ -25,7 +25,7 @@ public class BlueRentalPage {
     @FindBy(id = "dropdown-basic-button")
     public WebElement login3;
 
-    @FindBy(xpath = "(//*[text()='Logout'")
+    @FindBy(xpath = "(//a[@role='button'])[1]")
     public WebElement logout;
 
     @FindBy(xpath = "//*[text()='OK']")

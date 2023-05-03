@@ -11,7 +11,7 @@ import techproed.utilities.ExcelUtils;
 public class C02_BlueRentalExcelTest1 {
     /*
     Eğer bir veriyi(datayı) .properties dosyasından almak istiyorsak, ConfigReader classından getProperty()
-methodunu kullanarak .properties dosyamıza kirdiğimiz key değerini belirtiriz ve bize buy key değerinin
+methodunu kullanarak .properties dosyamıza girdiğimiz key değerini belirtiriz ve bize  key değerinin
 value sunu döndürür.
     Eğer bir veriri(datayı) excel dosyasından almak istiyorsak, oluşturmuş olduğumuz ExcelUtils class'ındaki
 methodları kullanarak istediğimiz veriyi alabiliriz
