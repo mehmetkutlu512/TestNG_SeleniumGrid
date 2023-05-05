@@ -11,12 +11,12 @@
             <!-- exclude ile yukarıdaki örnekte test4 methodu haricindeki diğer methodlar çalışacak -->
             <class name="techproed.tests.day22_Anotation.C02_BeforeAfterMethod">
                 <methods>
-                    <include name="amazonTest"/>
+                    <exclude name="amazonTest"/>
                 </methods>
             </class>
             <class name="techproed.tests.day22_Anotation.C03_Priority">
                 <methods>
-                    <include name="facebookTest"/>
+                    <exclude name="facebookTest"/>
                 </methods>
             </class>
 

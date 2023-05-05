@@ -1,4 +1,4 @@
-package techproed.tests.SmokeTest;
+package techproed.tests.day24_Properties_Pages.SmokeTest;
 
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
@@ -9,7 +9,7 @@ import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
 public class NegativeTest {
-    @Test
+    @Test(groups = "smoke")
     public void test1() throws InterruptedException {
      /*
         Description:

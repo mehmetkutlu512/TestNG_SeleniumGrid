@@ -1,4 +1,4 @@
-package techproed.tests.SmokeTest;
+package techproed.tests.day24_Properties_Pages.SmokeTest;
 
 import org.openqa.selenium.Keys;
 import org.testng.Assert;

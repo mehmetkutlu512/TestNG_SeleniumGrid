@@ -7,6 +7,7 @@
                 <methods>
                     <include name="test1"/>
                     <include name="test4"/>
+                    <!-- Yukarıdaki örnekte include ile sadece calistirilmak istediğimiz methodları çalışacak -->
                 </methods>
             </class>
             <class name="techproed.tests.day22_Anotation.C02_BeforeAfterMethod">
