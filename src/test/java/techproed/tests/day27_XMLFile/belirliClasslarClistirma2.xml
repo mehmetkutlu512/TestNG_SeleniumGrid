@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Day 23 ve Day 25 Istenen Class'lari Calistirma">
+<suite name="Day 23 ve Day 25 Istenen Class'lari Calistirma" parallel="methods" thread-count="2">
     <test name="Day 23 Istenen Class'lari Calistirma">
         <classes>
             <class name="techproed.tests.day23_DependsOnMethods_SoftAssertion.C01_DependsOnMethods"/>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Day 23cParallel Tset" parallel="classes" thread-count="2">
+        <!-- .xml files ile paralel test yapmak için projemizi öncelikle buna göre dizayn etmeliyiz.
+         Çalışan testler birbirinden bağımsız olmalıdır. Bağımlılığı olan testler paralel çalışturmada
+         hata verebilir.
+
+         Paralel test yapabilmek için öncelikle <suite> tagına parallel parametresi yazarız. Sonrasında
+         parallel parametresine class, method, test gibi atamalarla hangi seviyede test yapacağını belirleriz.
+         class -> Her bir işlem için bir class ile run eder. Çalıştığı class'ta işlem bitince sıradaki class'a geçer.
+         method -> Her bir işlem için bir method ile run eder.
+         tests -> Her bir işlem için her bir test ile run eder.
+
+         .xml file ile paralel test yapmanın amacı testlerimizi daha kısa sürede bitirebilmektir.
+         Bunu da fazladan browser açarak gerçekleştirir.
+          -->
+        <classes>
+            <class name="techproed.tests.day23_DependsOnMethods_SoftAssertion.C01_DependsOnMethods">
+                <methods>
+                    <include name="amazonTest"/>
+                    <include name="amazonTest2"/>
+                    <include name="amazonTest3"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.day23_DependsOnMethods_SoftAssertion.C01_DependsOnMethodsPractice">
+                <methods>
+                    <include name="amazonTest1"/>
+                    <include name="amazonTest2"/>
+                    <include name="amazonTest3"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.day23_DependsOnMethods_SoftAssertion.C02_DependsOnMethodPriority">
+                <methods>
+                    <include name="amazonTest"/>
+                    <include name="amazonTest2"/>
+                    <include name="amazonTest3"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.day23_DependsOnMethods_SoftAssertion.C03_SoftAssertion">
+                <methods>
+                    <include name="amazonTest"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.day23_DependsOnMethods_SoftAssertion.C03_SoftAssertionPractice">
+                <methods>
+                    <include name="amazonTest"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.day23_DependsOnMethods_SoftAssertion.C04_DriverTest">
+                <methods>
+                    <include name="driverTest1"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.day23_DependsOnMethods_SoftAssertion.C04_DriverTestPractice">
+                <methods>
+                    <include name="driverTest1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
