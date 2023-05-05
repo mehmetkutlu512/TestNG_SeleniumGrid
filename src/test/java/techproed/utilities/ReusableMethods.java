@@ -120,9 +120,9 @@ public class ReusableMethods {
     }
 
     //Tüm sayfa ScreenShot
-    public static void tumSayfaResmi (){
+    public static void tumSayfaResmi (String name){
         String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
-        String dosyaYolu = "testOutput/screenShot" +tarih + ".png";
+        String dosyaYolu = "testOutput/screenShot" +tarih + name + ".png";
 
         TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
 

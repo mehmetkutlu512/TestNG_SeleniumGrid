@@ -27,7 +27,7 @@ public class NegativeTest {
         blueRentalPage.email.sendKeys(ConfigReader.getProperty("fakeEmail"), Keys.TAB, ConfigReader.getProperty("fakepass"), Keys.ENTER);
         //Thread.sleep(3000);
         ReusableMethods.bekle(3);
-        ReusableMethods.tumSayfaResmi();
+        ReusableMethods.tumSayfaResmi("TumSayfaResmi");
         Assert.assertTrue(blueRentalPage.hataMesaji.isDisplayed());
         Driver.closeDriver();
 
