@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="day 22 Test">
+        <packages>
+            <package name="techproed.tests.day24_Properties_Pages.SmokeTest"/>
+        </packages>
+        <classes>
+           <class name="techproed.tests.day22_Anotation.C01_Annotation">
+               <methods>
+                   <include name="test1"/>
+                   <include name="test4"/>
+               </methods>
+           </class>
+            <class name="techproed.tests.day22_Anotation.C03_Priority">
+                <methods>
+                    <exclude name="amazonTest"/>
+                </methods>
+            </class>
+        </classes>
+
+    </test>
+</suite>

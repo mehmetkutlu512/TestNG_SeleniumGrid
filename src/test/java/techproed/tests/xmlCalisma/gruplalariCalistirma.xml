@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Day 24 Smoke Test">
+    <test name="Negative ve Pozitive Test">
+        <groups>
+            <run>
+                <include name="deneme"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="techproed.tests.day24_Properties_Pages.SmokeTest"/>
+        </packages>
+    </test>
+</suite>

@@ -9,7 +9,7 @@ import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
 public class NegativeTestPractice {
-    @Test
+    @Test(groups = "deneme")
     public void test1() {
              /*
         Description:

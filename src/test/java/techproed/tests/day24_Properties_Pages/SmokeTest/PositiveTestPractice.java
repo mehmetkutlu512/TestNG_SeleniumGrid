@@ -7,7 +7,7 @@ import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 
 public class PositiveTestPractice {
-    @Test
+    @Test(groups = "deneme")
     public void test1() {
                         /*
         Acceptance Criteria:

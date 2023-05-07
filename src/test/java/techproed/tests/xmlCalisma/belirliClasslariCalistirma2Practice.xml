@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Belirli ClasslariCalistirma Practice">
+    <test name="Day 23 Istenen Class'lari Calistirma">
+        <classes>
+            <class name="techproed.tests.day23_DependsOnMethods_SoftAssertion.C01_DependsOnMethods"/>
+        </classes>
+    </test>
+    <test name="Day 25 Istenen Class'lari Calistirma">
+        <classes>
+            <class name="techproed.tests.day25_ExcelUtils.C03_BlueRentalExcelTest2"/>
+        </classes>
+
+    </test>
+</suite>
