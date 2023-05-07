@@ -1,10 +1,12 @@
 package techproed.utilities;
 
-import org.testng.ITestContext;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
+import org.testng.*;
+import org.testng.annotations.ITestAnnotation;
 
-public class Listeners implements ITestListener {
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+
+public class Listeners implements ITestListener, IRetryAnalyzer, IAnnotationTransformer {
         /*
     Listeners; TestNG de bir test'in durumunu ve sonucunu izleyen ve bu duruma yanıt veren bir yapıdır.
     Testlerin passed ve failed olma durumlarını, başlangıç ve bitişini takip eder ve raporlayabilir.
@@ -45,5 +47,32 @@ public class Listeners implements ITestListener {
     public void onTestSkipped(ITestResult result) {
         System.out.println("onTestSkipped Methodu -> SKIP(atlanan) testlerden sonra tek bir sefer çağrılır" + result.getName());
 
+    }
+
+    /*
+       Bu METHOD sadece FAIL olan test case'leri tekrar çalıştırır
+       maxRetryCount ek olarak çalisma sayısıdır. Bu örnekte Fail olan test (maxRetryCount = 1) normal bir kere
+       çalıştıktan sonra fail olursa 1 kez daha çalışacaktır.
+        */
+    private int retryCount = 0;
+    private static final int maxRetryCount = 1;
+    @Override
+    public boolean retry(ITestResult result) {
+        if (retryCount < maxRetryCount) {
+            retryCount++;
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod) {
+        /*
+        Bu methodun amacı; test notasyonlarını, sınıfları, constructorları ve methodları transform (dönüştürme) etmemize
+        olanak sağlar.
+        Bu method sayesinde Listeners sınıfını .xml dosyasında kullanabileceğiz ve istediğimi class'ları fail olma
+        durumunda listeners sınıfı retry methodunu kullanarak istediğimi kadar çalıştırabile ceğiz.
+         */
+        annotation.setRetryAnalyzer(Listeners.class);
     }
 }
