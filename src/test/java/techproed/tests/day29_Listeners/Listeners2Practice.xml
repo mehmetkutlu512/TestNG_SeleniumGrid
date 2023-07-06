@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Listeners Suite">
+    <listeners>
+        <listener class-name="techproed.utilities.ListenersPractice"/>
+    </listeners>
+    <test name="Listeners Test">
+        <classes>
+            <class name="techproed.tests.day29_Listeners.C02_ListenersTest2">
+                <methods>
+                    <include name="test1"/>
+                    <include name="test2"/>
+                    <include name="test3"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
